@@ -18,7 +18,7 @@ public class Employee {
         id = counter++;
         checkErrorDepartment(department, countDepartment);
         checkErrorSalary(salary);
-        checkErrorFullName(fullName, m);
+        checkErrorFullName(fullName);
     }
 
     public static void checkErrorDepartment(int department, int countDepartment) {
@@ -33,7 +33,7 @@ public class Employee {
         }
     }
 
-    public static void checkErrorFullName(String fullName, char[] m) {
+    public static void checkErrorFullName(String fullName) {
         char[] c = fullName.toCharArray();
         for (int i = 0; i < c.length; i++) {
             for (int j = 0; j < m.length; j++) {
@@ -73,6 +73,12 @@ public class Employee {
     public int getDepartment() {
         return this.department;
     }
+
+    public void printInfo() {
+        System.out.print("id " + id + ", ");
+        System.out.print("ФИО " + fullName + ", ");
+        System.out.print("зарплата " + salary);
+        System.out.println();}
 
     @Override
     public String toString() {
